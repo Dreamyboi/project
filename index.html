@@ -103,14 +103,18 @@
             border: 1px solid #e2e8f0;
             width: 100%;
             padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* Сликата ќе се прилагодува сама автоматски */
+        /* Сликата се прилагодува автоматски */
         .product-image {
             width: 100%;
-            max-width: 450px;
+            max-width: 400px;
             height: auto;
             border-radius: 8px;
+            object-fit: contain;
         }
 
         .btn {
@@ -285,10 +289,10 @@
         <h1>Вкусен. Крцкав. 100% Еколошки.</h1>
         <p>Запознајте го CrispBio — првиот чипс во стил на Pringles спакуван во целосно биоразградлива туба без пластика. Уживајте во омилениот вкус и чувајте ја природата!</p>
         
-        <!-- Овде стои твојата слика -->
+        <!-- НОВ СТАБИЛЕН ЛИНК ОД ИНТЕРНЕТ ЗА СЛИКАТА -->
         <div class="product-display">
             <div class="product-card">
-                <img src="chips.png" alt="CrispBio Чипс" class="product-image">
+                <img src="https://ibb.co" alt="CrispBio Чипс" class="product-image">
             </div>
         </div>
 
@@ -307,7 +311,7 @@
         </div>
         <div class="feature-box">
             <h3>Нето тежина 150g</h3>
-            <p>Идеално семејно пакување подгервено за споделување во секое време.</p>
+            <p>Идеално семејно пакување подготвено за споделување во секое време.</p>
         </div>
     </section>
 
@@ -349,6 +353,3 @@
             document.getElementById('buyModal').style.display = 'none';
         }
 
-        function confirmOrder(event) {
-            event.preventDefault();
-            alert('Успешна нарачка! Вашиот CrispBio еколошки чипс е на пат.');
