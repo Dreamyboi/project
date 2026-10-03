@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нарачка - CrispBio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background: #f7fafc;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+
+        .nav {
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+            color: #2f855a;
+        }
+
+        .back {
+            text-decoration: none;
+            color: #2f855a;
+            font-weight: 600;
+        }
+
+        .page {
+            max-width: 1000px;
+            margin: 45px auto;
+            padding: 0 20px;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .heading h1 {
+            color: #22543d;
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+
+        .heading p {
+            color: #718096;
+        }
+
+        .checkout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            align-items: start;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .card h2 {
+            color: #22543d;
+            margin-bottom: 22px;
+            font-size: 22px;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 230px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .product-name {
+            font-size: 22px;
+            font-weight: 800;
+            color: #22543d;
+        }
+
+        .description {
+            color: #718096;
+            font-size: 14px;
+            margin: 5px 0 20px;
+        }
+
+        .quantity-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .quantity-row input {
+            width: 75px;
+            padding: 9px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        .total {
+            font-size: 21px;
+            font-weight: 800;
+            color: #2f855a;
+            border: none;
+            padding-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 17px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 7px;
+            font-size: 15px;
+            outline: none;
+            background: white;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #2f855a;
+            box-shadow: 0 0 0 2px #c6f6d5;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .payment {
+            background: #f0fff4;
+            border: 1px solid #c6f6d5;
+            padding: 14px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        .payment strong {
+            color: #22543d;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            background: #2f855a;
+            color: white;
+            font-weight: 800;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .submit-btn:hover {
+            background: #22543d;
+            transform: translateY(-1px);
+        }
+
+        .secure {
+            text-align: center;
+            color: #718096;
+            font-size: 12px;
+            margin-top: 14px;
+        }
+
+        .success {
+            display: none;
+            background: #f0fff4;
+            border: 1px solid #9ae6b4;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .success h2 {
+            color: #22543d;
+            margin-bottom: 8px;
+        }
+
+        .success p {
+            margin-bottom: 18px;
+        }
+
+        .home-btn {
+            display: inline-block;
+            background: #2f855a;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 70px;
+            padding: 25px;
+            text-align: center;
+            background: #2d3748;
+            color: #a0aec0;
+            font-size: 13px;
+        }
+
+        @media (max-width: 700px) {
+            .checkout {
+                grid-template-columns: 1fr;
+            }
+
+            .heading h1 {
+                font-size: 29px;
+            }
+
+            .card {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+        <div class="logo">CrispBio</div>
+        <a href="index.html" class="back">← Назад кон продавницата</a>
+    </div>
+</header>
+
+<main class="page">
+
+    <div class="heading">
+        <h1>Заврши ја нарачката</h1>
+        <p>Уште неколку чекори до твојот омилен крцкав чипс!</p>
+    </div>
+
+    <div class="checkout" id="checkout">
+
+        <section class="card">
+            <h2>Твојот производ</h2>
+
+            <img
+                src="chips.png.jpg"
+                alt="CrispBio чипс"
+                class="product-image"
+            >
+
+            <div class="product-name">CrispBio Potato Chips</div>
+            <div class="description">
+                Еколошки чипс во биоразградливо пакување · 150 g
+            </div>
+
+            <div class="quantity-row">
+                <label for="quantity">Количина:</label>
+                <input
+                    type="number"
+                    id="quantity"
+                    value="1"
+                    min="1"
+                    max="20"
+                    oninput="updateTotal()"
+                >
+            </div>
+
+            <div class="summary-row">
+                <span>Цена по пакување</span>
+                <span>150 ден.</span>
+            </div>
+
+            <div class="summary-row">
+                <span>Достава</span>
+                <span>Бесплатна</span>
+            </div>
+
+            <div class="summary-row total">
+                <span>Вкупно</span>
+                <span id="total">150 ден.</span>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Податоци за достава</h2>
+
+            <form id="orderForm">
+
+                <div class="form-group">
+                    <label for="name">Име и презиме</label>
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Марко Петровски"
+                        required
+                        autocomplete="name"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Телефонски број</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="07X XXX XXX"
+                        required
+                        autocomplete="tel"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Адреса за достава</label>
+                    <input
+                        type="text"
+                        id="address"
+                        placeholder="Улица и број"
+                        required
+                        autocomplete="street-address"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="city">Град</label>
+                    <input
+                        type="text"
+                        id="city"
+                        placeholder="Скопје"
+                        required
+                        autocomplete="address-level2"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="note">Забелешка (опционално)</label>
+                    <textarea
+                        id="note"
+                        placeholder="Дополнителни инструкции за доставата..."
+                    ></textarea>
+                </div>
+
+                <div class="payment">
+                    <strong>Начин на плаќање</strong>
+                    <p>💵 Плаќање во готово при достава</p>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Потврди ја нарачката →
+                </button>
+
+                <p class="secure">
+                    ✓ Едноставна нарачка · Плаќање при достава
+                </p>
+
+            </form>
+        </section>
+
+    </div>
+
+    <div class="success" id="success">
+        <h2>✓ Нарачката е успешно пополнета!</h2>
+        <p id="successMessage"></p>
+        <p>
+            Ова е демонстративна нарачка за училишниот проект.
+            Не е испратена до вистинска продавница.
+        </p>
+        <a href="index.html" class="home-btn">
+            Назад кон почетната
+        </a>
+    </div>
+
+</main>
+
+<footer>
+    © 2026 CrispBio — Еколошки чипс
+</footer>
+
+<script>
+    const price = 150;
+
+    function updateTotal() {
+        const quantityInput = document.getElementById("quantity");
+        let quantity = Number(quantityInput.value);
+
+        if (!Number.isFinite(quantity)) {
+            quantity = 1;
+        }
+
+        quantity = Math.min(20, Math.max(1, Math.floor(quantity)));
+        quantityInput.value = quantity;
+
+        document.getElementById("total").textContent =
+            (price * quantity) + " ден.";
+    }
+
+    document.getElementById("orderForm").addEventListener(
+        "submit",
+        function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const quantity = Number(
+                document.getElementById("quantity").value
+            );
+            const total = price * quantity;
+
+            document.getElementById("successMessage").textContent =
+                "Ви благодариме, " + name + "! " +
+                "Избравте " + quantity +
+                " пакување/а CrispBio, во вкупна вредност од " +
+                total + " ден.";
+
+            document.getElementById("checkout").style.display = "none";
+            document.getElementById("success").style.display = "block";
+
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    );
+</script>
+
+</body>
+</html>
