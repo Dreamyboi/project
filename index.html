@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мојот Продукт - Веб страница</title>
+    <style>
+        /* Основни ресетирања */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        /* Навигација */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2b6cb0;
+        }
+
+        /* Главен дел (Hero) */
+        .hero {
+            background: linear-gradient(135deg, #63b3ed 0%, #2b6cb0 100%);
+            color: white;
+            padding: 150px 20px 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #2b6cb0;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Секција со карактеристики */
+        .features {
+            max-width: 1100px;
+            margin: 80px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-box {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .feature-box h3 {
+            color: #2b6cb0;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        /* Контакт секција */
+        .contact {
+            background-color: #edf2f7;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 30px auto 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+        }
+
+        .submit-btn {
+            background-color: #2b6cb0;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #2c5282;
+        }
+
+        /* Футер */
+        footer {
+            background-color: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Навигација -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">Продукт Лого</div>
+            <ul class="nav-links">
+                <li><a href="#home">Почетна</a></li>
+                <li><a href="#features">Карактеристики</a></li>
+                <li><a href="#contact">Контакт</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Секција -->
+    <section class="hero" id="home">
+        <h1>Името на Твојот Продукт</h1>
+        <p>Краток и привлечен опис на продуктот кој објаснува кој проблем го решава и зошто е посебен.</p>
+        <a href="#contact" class="btn">Купи Сега</a>
+    </section>
+
+    <!-- Карактеристики -->
+    <section class="features" id="features">
+        <div class="feature-box">
+            <h3>Брзина</h3>
+            <p>Овој продукт работи исклучително брзо и ви заштедува време во секојдневните обврски.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Квалитет</h3>
+            <p>Изработен од најдобрите материјали/технологии со цел да трае со години.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Поддршка</h3>
+            <p>Нашиот тим е тука за вас 24/7 за да ви помогне со било какви прашања.</p>
+        </div>
+    </section>
+
+    <!-- Контакт -->
+    <section class="contact" id="contact">
+        <h2>Имате прашања? Контактирајте нè</h2>
+        <form class="contact-form" onsubmit="alert('Пораката е испратена!'); return false;">
+            <div class="form-group">
+                <label for="name">Име</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Е-пошта</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Порака</label>
+                <textarea id="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Испрати</button>
+        </form>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <p>&copy; 2026 Училишно домашна задача. Сите права се задржани.</p>
+    </footer>
+
+</body>
+</html>
