@@ -67,7 +67,7 @@
         /* Главен дел (Hero) */
         .hero {
             background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%);
-            padding: 160px 20px 60px 20px;
+            padding: 160px 20px 80px 20px;
             text-align: center;
         }
 
@@ -87,10 +87,11 @@
             color: #4a5568;
         }
 
+        /* Приказ на сликата на продуктот */
         .product-display {
             display: flex;
             justify-content: center;
-            margin: 20px auto;
+            margin: 30px auto;
             max-width: 600px;
         }
 
@@ -107,9 +108,10 @@
             align-items: center;
         }
 
+        /* Сликата се прилагодува автоматски */
         .product-image {
             width: 100%;
-            max-width: 350px;
+            max-width: 400px;
             height: auto;
             border-radius: 8px;
             object-fit: contain;
@@ -130,7 +132,7 @@
             border: none;
             font-size: 16px;
             box-shadow: 0 5px 15px rgba(47, 133, 90, 0.3);
-            margin-top: 25px;
+            margin-top: 20px;
         }
 
         .btn:hover {
@@ -142,7 +144,7 @@
         /* Секција со карактеристики */
         .features {
             max-width: 1100px;
-            margin: 50px auto;
+            margin: 60px auto 100px auto;
             padding: 0 20px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -164,79 +166,8 @@
             font-size: 22px;
         }
 
-        /* НОВА СЕКЦИЈА: Избор на Вкусови */
-        .flavors-section {
-            max-width: 1100px;
-            margin: 60px auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-        .flavors-section h2 {
-            color: #22543d;
-            margin-bottom: 30px;
-            font-size: 32px;
-        }
-
-        .flavors-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .flavor-card {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-            border: 1px solid #e2e8f0;
-        }
-
-        .flavor-icon {
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-
-        .flavor-card.original { border-left: 5px solid #2f855a; }
-        .flavor-card.sour { border-left: 5px solid #48bb78; }
-        .flavor-card.paprika { border-left: 5px solid #e53e3e; }
-
-        /* НОВА СЕКЦИЈА: Нутритивна Табела */
-        .nutrition-section {
-            max-width: 700px;
-            margin: 60px auto 100px auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-        .nutrition-section h2 {
-            color: #22543d;
-            margin-bottom: 20px;
-            font-size: 32px;
-        }
-
-        .nutrition-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        .nutrition-table th, .nutrition-table td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .nutrition-table th {
-            background-color: #2f855a;
-            color: white;
-        }
-
-        .nutrition-table tr:hover {
-            background-color: #f7fafc;
+        .feature-box p {
+            color: #4a5568;
         }
 
         /* ЕКРАН ЗА КУПУВАЊЕ (Modal / Buy Screen) */
@@ -306,12 +237,11 @@
             color: #4a5568;
         }
 
-        .form-group input, .form-group select {
+        .form-group input {
             width: 100%;
             padding: 12px;
             border: 1px solid #cbd5e0;
             border-radius: 6px;
-            font-size: 15px;
         }
 
         .submit-btn {
@@ -349,8 +279,7 @@
             <div class="logo">CrispBio</div>
             <ul class="nav-links">
                 <li><a href="#home">Почетна</a></li>
-                <li><a href="#flavors">Вкусови</a></li>
-                <li><a href="#nutrition">Вредности</a></li>
+                <li><a href="#features">Предности</a></li>
             </ul>
         </div>
     </header>
@@ -360,6 +289,7 @@
         <h1>Вкусен. Крцкав. 100% Еколошки.</h1>
         <p>Запознајте го CrispBio — првиот чипс во стил на Pringles спакуван во целосно биоразградлива туба без пластика. Уживајте во омилениот вкус и чувајте ја природата!</p>
         
+        <!-- ГО СМЕНИВ ИМЕТО ТУКА ДА БИДЕ ТОЧНО КАКО ТВОЈАТА СЛИКА -->
         <div class="product-display">
             <div class="product-card">
                 <img src="chips.png.jpg" alt="CrispBio Чипс" class="product-image">
@@ -369,11 +299,57 @@
         <button class="btn" onclick="openBuyScreen()">Нарачај Веднаш</button>
     </section>
 
-    <!-- Карактеристики -->
-    <section class="features">
+    <!-- Предности -->
+    <section class="features" id="features">
         <div class="feature-box">
             <h3>0% Пластика</h3>
             <p>Пакувањето е комплетно биоразградливо и може целосно да се рециклира по употреба.</p>
         </div>
         <div class="feature-box">
             <h3>Премиум Квалитет</h3>
+            <p>Направен од органски селектирани компири со истата совршена форма и крцкавост што ја сакате.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Нето тежина 150g</h3>
+            <p>Идеално семејно пакување подготвено за споделување во секое време.</p>
+        </div>
+    </section>
+
+    <!-- Купување Прозорец -->
+    <div class="modal" id="buyModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeBuyScreen()">&times;</span>
+            <h2>Нарачај го твојот CrispBio</h2>
+            <div class="product-price">Цена: 150 ден.</div>
+            
+            <form onsubmit="confirmOrder(event)">
+                <div class="form-group">
+                    <label for="buyer-name">Име и Презиме</label>
+                    <input type="text" id="buyer-name" required placeholder="Марко Петровски">
+                </div>
+                <div class="form-group">
+                    <label for="buyer-phone">Телефонски број</label>
+                    <input type="tel" id="buyer-phone" required placeholder="07X XXX XXX">
+                </div>
+                <div class="form-group">
+                    <label for="buyer-address">Адреса за достава</label>
+                    <input type="text" id="buyer-address" required placeholder="Ул. Партизанска бр. 10, Скопје">
+                </div>
+                <button type="submit" class="submit-btn">Потврди Нарачка</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Училишна домашна задача — Изработено за CrispBio проект.</p>
+    </footer>
+
+    <script>
+        function openBuyScreen() {
+            document.getElementById('buyModal').style.display = 'flex';
+        }
+
+        function closeBuyScreen() {
+            document.getElementById('buyModal').style.display = 'none';
+        }
+
