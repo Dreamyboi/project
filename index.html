@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мојот Продукт - Веб страница</title>
+    <title>CrispBio Potato Chips - Еколошки Чипс</title>
     <style>
         /* Основни ресетирања */
         * {
@@ -14,15 +14,15 @@
         }
 
         body {
-            color: #333;
+            color: #2d3748;
             line-height: 1.6;
-            background-color: #f9f9f9;
+            background-color: #f7fafc;
         }
 
         /* Навигација */
         header {
             background-color: #ffffff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: fixed;
             width: 100%;
             top: 0;
@@ -35,13 +35,13 @@
             align-items: center;
             max-width: 1100px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px 20px;
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #2b6cb0;
+            font-size: 26px;
+            font-weight: 800;
+            color: #2f855a;
         }
 
         .nav-links {
@@ -55,56 +55,92 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #555;
+            color: #4a5568;
             font-weight: 600;
             transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: #2b6cb0;
+            color: #2f855a;
         }
 
         /* Главен дел (Hero) */
         .hero {
-            background: linear-gradient(135deg, #63b3ed 0%, #2b6cb0 100%);
-            color: white;
-            padding: 150px 20px 100px 20px;
+            background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%);
+            padding: 160px 20px 80px 20px;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
+            font-size: 52px;
+            margin-bottom: 15px;
+            color: #22543d;
+            font-weight: 800;
         }
 
         .hero p {
             font-size: 20px;
-            margin-bottom: 30px;
-            max-width: 600px;
+            margin-bottom: 35px;
+            max-width: 650px;
             margin-left: auto;
             margin-right: auto;
+            color: #4a5568;
+        }
+
+        /* Приказ на сликата на продуктот */
+        .product-display {
+            display: flex;
+            justify-content: center;
+            margin: 30px auto;
+            max-width: 600px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            width: 100%;
+            padding: 20px;
+        }
+
+        /* Сликата ќе се прилагодува сама автоматски */
+        .product-image {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            border-radius: 8px;
         }
 
         .btn {
             display: inline-block;
-            background-color: #ffffff;
-            color: #2b6cb0;
-            padding: 12px 30px;
-            border-radius: 25px;
+            background-color: #2f855a;
+            color: white;
+            padding: 16px 45px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+            box-shadow: 0 5px 15px rgba(47, 133, 90, 0.3);
+            margin-top: 20px;
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            background-color: #22543d;
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(47, 133, 90, 0.4);
         }
 
         /* Секција со карактеристики */
         .features {
             max-width: 1100px;
-            margin: 80px auto;
+            margin: 60px auto 100px auto;
             padding: 0 20px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -113,74 +149,120 @@
 
         .feature-box {
             background: white;
-            padding: 30px;
-            border-radius: 8px;
+            padding: 35px 30px;
+            border-radius: 12px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border-top: 4px solid #2f855a;
         }
 
         .feature-box h3 {
-            color: #2b6cb0;
-            margin-bottom: 15px;
+            color: #22543d;
+            margin-bottom: 12px;
             font-size: 22px;
         }
 
-        /* Контакт секција */
-        .contact {
-            background-color: #edf2f7;
-            padding: 80px 20px;
-            text-align: center;
+        .feature-box p {
+            color: #4a5568;
         }
 
-        .contact-form {
-            max-width: 500px;
-            margin: 30px auto 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        /* ЕКРАН ЗА КУПУВАЊЕ (Modal / Buy Screen) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(26, 32, 44, 0.6);
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 480px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            color: #2d3748;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 30px;
+            color: #a0aec0;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: #e53e3e;
+        }
+
+        .modal h2 {
+            margin-bottom: 8px;
+            color: #22543d;
+        }
+
+        .product-price {
+            font-size: 26px;
+            font-weight: 800;
+            color: #2f855a;
+            margin-bottom: 25px;
+            background: #f0fff4;
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 6px;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             text-align: left;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
             font-weight: 600;
+            color: #4a5568;
         }
 
-        .form-group input, .form-group textarea {
+        .form-group input {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             border: 1px solid #cbd5e0;
-            border-radius: 4px;
+            border-radius: 6px;
         }
 
         .submit-btn {
-            background-color: #2b6cb0;
+            background-color: #2f855a;
             color: white;
             border: none;
-            padding: 12px 20px;
-            border-radius: 4px;
+            padding: 15px 20px;
+            border-radius: 6px;
             cursor: pointer;
             font-weight: bold;
             width: 100%;
-            transition: background 0.3s;
+            font-size: 16px;
+            text-transform: uppercase;
         }
 
         .submit-btn:hover {
-            background-color: #2c5282;
+            background-color: #22543d;
         }
 
         /* Футер */
         footer {
-            background-color: #1a202c;
-            color: white;
+            background-color: #2d3748;
+            color: #a0aec0;
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             font-size: 14px;
         }
     </style>
@@ -190,62 +272,83 @@
     <!-- Навигација -->
     <header>
         <div class="nav-container">
-            <div class="logo">Продукт Лого</div>
+            <div class="logo">CrispBio</div>
             <ul class="nav-links">
                 <li><a href="#home">Почетна</a></li>
-                <li><a href="#features">Карактеристики</a></li>
-                <li><a href="#contact">Контакт</a></li>
+                <li><a href="#features">Предности</a></li>
             </ul>
         </div>
     </header>
 
     <!-- Hero Секција -->
     <section class="hero" id="home">
-        <h1>Името на Твојот Продукт</h1>
-        <p>Краток и привлечен опис на продуктот кој објаснува кој проблем го решава и зошто е посебен.</p>
-        <a href="#contact" class="btn">Купи Сега</a>
+        <h1>Вкусен. Крцкав. 100% Еколошки.</h1>
+        <p>Запознајте го CrispBio — првиот чипс во стил на Pringles спакуван во целосно биоразградлива туба без пластика. Уживајте во омилениот вкус и чувајте ја природата!</p>
+        
+        <!-- Овде стои твојата слика -->
+        <div class="product-display">
+            <div class="product-card">
+                <img src="chips.png" alt="CrispBio Чипс" class="product-image">
+            </div>
+        </div>
+
+        <button class="btn" onclick="openBuyScreen()">Нарачај Веднаш</button>
     </section>
 
-    <!-- Карактеристики -->
+    <!-- Предности -->
     <section class="features" id="features">
         <div class="feature-box">
-            <h3>Брзина</h3>
-            <p>Овој продукт работи исклучително брзо и ви заштедува време во секојдневните обврски.</p>
+            <h3>0% Пластика</h3>
+            <p>Пакувањето е комплетно биоразградливо и може целосно да се рециклира по употреба.</p>
         </div>
         <div class="feature-box">
-            <h3>Квалитет</h3>
-            <p>Изработен од најдобрите материјали/технологии со цел да трае со години.</p>
+            <h3>Премиум Квалитет</h3>
+            <p>Направен од органски селектирани компири со истата совршена форма и крцкавост што ја сакате.</p>
         </div>
         <div class="feature-box">
-            <h3>Поддршка</h3>
-            <p>Нашиот тим е тука за вас 24/7 за да ви помогне со било какви прашања.</p>
+            <h3>Нето тежина 150g</h3>
+            <p>Идеално семејно пакување подгервено за споделување во секое време.</p>
         </div>
     </section>
 
-    <!-- Контакт -->
-    <section class="contact" id="contact">
-        <h2>Имате прашања? Контактирајте нè</h2>
-        <form class="contact-form" onsubmit="alert('Пораката е испратена!'); return false;">
-            <div class="form-group">
-                <label for="name">Име</label>
-                <input type="text" id="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Е-пошта</label>
-                <input type="email" id="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Порака</label>
-                <textarea id="message" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Испрати</button>
-        </form>
-    </section>
+    <!-- Купување Прозорец -->
+    <div class="modal" id="buyModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeBuyScreen()">&times;</span>
+            <h2>Нарачај го твојот CrispBio</h2>
+            <div class="product-price">Цена: 150 ден.</div>
+            
+            <form onsubmit="confirmOrder(event)">
+                <div class="form-group">
+                    <label for="buyer-name">Име и Презиме</label>
+                    <input type="text" id="buyer-name" required placeholder="Марко Петровски">
+                </div>
+                <div class="form-group">
+                    <label for="buyer-phone">Телефонски број</label>
+                    <input type="tel" id="buyer-phone" required placeholder="07X XXX XXX">
+                </div>
+                <div class="form-group">
+                    <label for="buyer-address">Адреса за достава</label>
+                    <input type="text" id="buyer-address" required placeholder="Ул. Партизанска бр. 10, Скопје">
+                </div>
+                <button type="submit" class="submit-btn">Потврди Нарачка</button>
+            </form>
+        </div>
+    </div>
 
-    <!-- Футер -->
     <footer>
-        <p>&copy; 2026 Училишно домашна задача. Сите права се задржани.</p>
+        <p>&copy; 2026 Училишна домашна задача — Изработено за CrispBio проект.</p>
     </footer>
 
-</body>
-</html>
+    <script>
+        function openBuyScreen() {
+            document.getElementById('buyModal').style.display = 'flex';
+        }
+
+        function closeBuyScreen() {
+            document.getElementById('buyModal').style.display = 'none';
+        }
+
+        function confirmOrder(event) {
+            event.preventDefault();
+            alert('Успешна нарачка! Вашиот CrispBio еколошки чипс е на пат.');
