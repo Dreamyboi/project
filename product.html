@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CrispBio — Детали за производот</title>
+<style>
+:root{--green:#2f855a;--dark:#22543d;--text:#2d3748;--muted:#718096;--bg:#f7fafc;--line:#e2e8f0}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',Tahoma,Arial,sans-serif}
+body{background:var(--bg);color:var(--text);line-height:1.6}
+header{background:#fff;box-shadow:0 2px 10px #0000000d;position:sticky;top:0;z-index:5}
+.nav{max-width:1100px;margin:auto;padding:16px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.logo{font-size:26px;font-weight:800;color:var(--green);text-decoration:none}.back{color:var(--green);font-weight:700;text-decoration:none}
+main{max-width:1100px;margin:45px auto;padding:0 22px}
+.breadcrumb{font-size:14px;color:var(--muted);margin-bottom:22px}.breadcrumb a{color:var(--green);text-decoration:none}
+.product{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:20px;padding:32px;box-shadow:0 10px 30px #00000008}
+.photo{background:linear-gradient(135deg,#f0fff4,#e6fffa);border-radius:15px;min-height:390px;display:flex;align-items:center;justify-content:center;padding:24px}.photo img{width:100%;max-height:370px;object-fit:contain;border-radius:10px}
+.tag{display:inline-block;background:#f0fff4;color:var(--dark);border:1px solid #c6f6d5;border-radius:30px;padding:5px 12px;font-size:13px;font-weight:700;margin-bottom:12px}
+h1{font-size:clamp(30px,4vw,42px);line-height:1.2;color:var(--dark);margin-bottom:12px}.sub{color:var(--muted);margin-bottom:18px}.price{font-size:32px;font-weight:800;color:var(--green);margin:12px 0 18px}.price small{font-size:15px;font-weight:500;color:var(--muted)}
+.description{margin:18px 0 22px}.details{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0}.detail{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:12px}.detail strong{display:block;color:var(--dark);font-size:14px}.detail span{font-size:14px;color:var(--muted)}
+.buyrow{display:flex;align-items:end;gap:14px;margin-top:22px}.qty{width:110px}.qty label{display:block;font-size:14px;font-weight:700;margin-bottom:6px}.qty input{width:100%;padding:13px;border:1px solid #cbd5e0;border-radius:8px;font-size:16px}.btn{flex:1;border:0;border-radius:9px;background:var(--green);color:white;padding:14px 20px;font-size:16px;font-weight:800;cursor:pointer;transition:.2s}.btn:hover{background:var(--dark);transform:translateY(-1px)}.delivery{font-size:13px;color:var(--muted);margin-top:13px}.below{margin:34px 0 50px;background:white;border:1px solid var(--line);border-radius:16px;padding:26px}.below h2{color:var(--dark);margin-bottom:10px}.below p{color:#4a5568}
+footer{text-align:center;background:#2d3748;color:#a0aec0;padding:24px;font-size:13px}
+@media(max-width:760px){main{margin:25px auto}.product{grid-template-columns:1fr;gap:25px;padding:20px}.photo{min-height:270px}.photo img{max-height:280px}.buyrow{align-items:stretch;flex-direction:column}.qty{width:100%}.details{grid-template-columns:1fr 1fr}.nav{padding:14px 18px}}
+</style>
+</head>
+<body>
+<header><div class="nav"><a class="logo" href="index.html">CrispBio</a><a class="back" href="index.html">← Назад кон продавницата</a></div></header>
+<main>
+<div class="breadcrumb"><a href="index.html">Почетна</a> &nbsp;›&nbsp; Детали за производот</div>
+<section class="product">
+  <div class="photo"><img src="chips.png.jpg" alt="CrispBio еколошки чипс" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;text-align:center;color:#22543d;font-weight:700&quot;>Сликата chips.png.jpg не е пронајдена.<br>Постави ја сликата во истата папка.</div>'"></div>
+  <div class="info">
+    <span class="tag">🌱 Еколошко пакување</span>
+    <h1>CrispBio Potato Chips</h1>
+    <p class="sub">Вкусен. Крцкав. 100% еколошки.</p>
+    <div class="price">150 ден. <small>/ пакување од 150 g</small></div>
+    <p class="description">Уживај во крцкав чипс направен од внимателно селектирани компири, спакуван во биоразградлива туба без пластика. Одличен за уживање дома или за споделување со пријателите.</p>
+    <div class="details">
+      <div class="detail"><strong>♻️ Пакување</strong><span>Биоразградливо</span></div>
+      <div class="detail"><strong>⚖️ Нето тежина</strong><span>150 g</span></div>
+      <div class="detail"><strong>🥔 Производ</strong><span>Чипс од компир</span></div>
+      <div class="detail"><strong>🚚 Достава</strong><span>Бесплатна</span></div>
+    </div>
+    <div class="buyrow">
+      <div class="qty"><label for="quantity">Количина</label><input id="quantity" type="number" min="1" max="20" value="1"></div>
+      <button class="btn" onclick="buyNow()">Купи сега →</button>
+    </div>
+    <p class="delivery">✓ Плаќање во готово при достава · ✓ Бесплатна достава</p>
+  </div>
+</section>
+<section class="below"><h2>Зошто CrispBio?</h2><p>Со CrispBio добиваш крцкав вкус и практично пакување кое е направено со мисла за природата. Нашата цел е омилената ужинка да доаѓа со помалку пластичен отпад.</p></section>
+</main>
+<footer>© 2026 CrispBio — Еколошки чипс</footer>
+<script>
+function buyNow(){const input=document.getElementById('quantity');let q=Math.floor(Number(input.value));if(!Number.isFinite(q))q=1;q=Math.min(20,Math.max(1,q));input.value=q;window.location.href='checkout.html?quantity='+q;}
+</script>
+</body>
+</html>
