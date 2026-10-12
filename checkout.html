@@ -416,6 +416,13 @@
 <script>
     const price = 150;
 
+    // Преземи ја количината избрана на страницата за производот.
+    const params = new URLSearchParams(window.location.search);
+    const requestedQuantity = Number(params.get("quantity"));
+    if (Number.isFinite(requestedQuantity) && requestedQuantity >= 1) {
+        document.getElementById("quantity").value = Math.min(20, Math.floor(requestedQuantity));
+    }
+
     function updateTotal() {
         const quantityInput = document.getElementById("quantity");
         let quantity = Number(quantityInput.value);
@@ -430,6 +437,8 @@
         document.getElementById("total").textContent =
             (price * quantity) + " ден.";
     }
+
+    updateTotal();
 
     document.getElementById("orderForm").addEventListener(
         "submit",
